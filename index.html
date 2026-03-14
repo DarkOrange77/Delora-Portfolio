@@ -34,10 +34,12 @@
     .fade-in:nth-child(5){animation-delay:0.5s}
     .fade-in:nth-child(6){animation-delay:0.6s}
     .fade-in:nth-child(7){animation-delay:0.7s}
+    .fade-in:nth-child(8){animation-delay:0.8s}
+    .fade-in:nth-child(9){animation-delay:0.9s}
 
     header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 8px}
     .logo{display:flex;align-items:center;gap:14px;cursor:pointer}
-    .mark{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 40px rgba(126,241,255,0.3), 0 0 60px rgba(196,123,255,0.2);font-family:Orbitron;color:#041018;font-weight:700;font-size:20px;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .mark{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 40px rgba(126,241,255,0.3), 0 0 60px rgba(196,123,255,0.2);font-family:Orbitron;color:#041018;font-weight:700;font-size:20px;transition:transform 0.3s ease, box-shadow 0.3s ease;object-fit:cover}
     .mark:hover{transform:scale(1.05) rotate(5deg);box-shadow:0 12px 50px rgba(126,241,255,0.4), 0 0 80px rgba(196,123,255,0.3)}
     
     nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-weight:600;position:relative;transition:color 0.3s ease}
@@ -69,8 +71,19 @@
 
     .section{padding:32px;border-radius:16px;background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.04));border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px);box-shadow:0 8px 40px rgba(0,0,0,0.4)}
     .section h3{font-family:Orbitron;margin:0 0 24px 0;font-size:28px;color:#fff}
-    
+
+    /* Research section special styling */
+    .research-item{padding:28px;border-radius:14px;background:linear-gradient(135deg, rgba(126,241,255,0.04), rgba(196,123,255,0.04));border:1px solid rgba(126,241,255,0.12);transition:all 0.3s ease}
+    .research-item:hover{border-color:rgba(126,241,255,0.3);box-shadow:0 10px 40px rgba(126,241,255,0.1)}
+    .research-title{font-weight:700;font-size:16px;color:#fff;margin-bottom:8px;line-height:1.4}
+    .research-meta{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .pub-badge{background:rgba(196,123,255,0.15);color:var(--accent-2);border:1px solid rgba(196,123,255,0.3);padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700}
+    .research-bullets{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+    .research-bullets li{font-size:14px;color:var(--muted);padding-left:20px;position:relative;line-height:1.5}
+    .research-bullets li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:12px;top:2px}
+
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .project.featured{grid-column:1/-1}
     .project{padding:24px;border-radius:14px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);cursor:pointer;position:relative}
     .project::before{content:'';position:absolute;inset:0;border-radius:14px;background:linear-gradient(135deg,rgba(126,241,255,0.1),rgba(196,123,255,0.1));opacity:0;transition:opacity 0.4s ease}
     .project:hover::before{opacity:1}
@@ -85,10 +98,15 @@
     .experience-grid{display:grid;gap:20px}
     .exp-item{padding:24px;border-radius:14px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);transition:all 0.3s ease}
     .exp-item:hover{border-color:rgba(126,241,255,0.2);box-shadow:0 10px 40px rgba(126,241,255,0.1)}
+    .exp-item.highlight{border-color:rgba(196,123,255,0.15);background:linear-gradient(135deg, rgba(196,123,255,0.04), rgba(126,241,255,0.02))}
+    .exp-item.highlight:hover{border-color:rgba(196,123,255,0.4);box-shadow:0 10px 40px rgba(196,123,255,0.15)}
     .exp-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;flex-wrap:wrap;gap:8px}
     .exp-title{font-weight:700;font-size:16px;color:#fff}
     .exp-date{font-size:13px;color:var(--accent);font-weight:600}
     .exp-org{font-size:14px;color:var(--muted);margin-bottom:10px}
+    .exp-bullets{list-style:none;padding:0;margin:8px 0 0 0;display:grid;gap:6px}
+    .exp-bullets li{font-size:14px;color:var(--muted);padding-left:18px;position:relative;line-height:1.5}
+    .exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:11px;top:2px}
 
     input, textarea{padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;font-family:inherit;transition:all 0.3s ease;width:100%;box-sizing:border-box}
     input:focus, textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 20px rgba(126,241,255,0.2), inset 0 0 10px rgba(126,241,255,0.05);background:rgba(255,255,255,0.04)}
@@ -98,6 +116,18 @@
     footer a:hover{color:var(--accent)}
 
     .cursor{position:fixed;top:0;left:0;width:20px;height:20px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width 0.3s ease, height 0.3s ease}
+
+    /* Hackathons grid */
+    .hackathon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .hack-item{padding:20px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);transition:all 0.3s ease}
+    .hack-item:hover{border-color:rgba(126,241,255,0.2);box-shadow:0 8px 30px rgba(126,241,255,0.08)}
+    .hack-title{font-weight:700;font-size:14px;color:#fff;margin-bottom:6px}
+    .hack-sub{font-size:13px;color:var(--muted);line-height:1.5}
+
+    /* Leadership */
+    .leadership-item{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);transition:all 0.3s ease}
+    .leadership-item:hover{border-color:rgba(196,123,255,0.3);box-shadow:0 8px 30px rgba(196,123,255,0.1)}
+    .leadership-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));flex-shrink:0;box-shadow:0 0 12px rgba(126,241,255,0.5)}
 
    @media (max-width:920px){
       .hero{grid-template-columns:1fr;padding:24px}
@@ -144,9 +174,8 @@
   <main class="wrap" role="main">
     <header class="fade-in">
       <div class="logo">
-<!-- ...existing code... -->
-<img class="mark" src="logo.png" alt="Delora Edward Avatar">
-<!-- ...existing code... -->        <div>
+        <img class="mark" src="logo.png" alt="Delora Edward Logo">
+        <div>
           <div style="font-weight:700;font-size:18px">Delora Edward</div>
           <div style="font-size:12px;color:var(--muted)">AI Security × Research</div>
         </div>
@@ -154,6 +183,7 @@
       <nav aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -167,36 +197,58 @@
           <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See projects</button>
           <a class="btn secondary" href="#contact">Get in touch</a>
         </div>
-
         <div style="margin-top:28px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
           <div class="tag" style="background:rgba(126,241,255,0.1);color:var(--accent);border-color:var(--accent)">Open to opportunities</div>
           <div class="tag">B.Tech IT Student</div>
           <div class="tag">Cybersecurity Enthusiast</div>
+          <div class="tag">Published Researcher</div>
         </div>
       </div>
-     <aside class="profile-card">
-  <img class="avatar" src="Delora.jpeg" alt="Delora Edward Avatar">
-  <div style="font-weight:700;font-size:18px">Delora Edward</div>
-  <div class="muted" style="font-size:13px;margin-top:4px">AI Security Researcher</div>
-  <div class="muted" style="font-size:12px;margin-top:4px">Kumaraguru College of Technology</div>
-  <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center">
-    <a class="btn" href="#contact">Contact</a>
-    <a class="btn" href="https://github.com/DarkOrange77" target="_blank" title="GitHub">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/delora-edward-39317a32a" target="_blank" title="LinkedIn">LinkedIn</a>
-  </div>
-</aside>
+      <aside class="profile-card">
+        <img class="avatar" src="Delora.jpeg" alt="Delora Edward Avatar">
+        <div style="font-weight:700;font-size:18px">Delora Edward</div>
+        <div class="muted" style="font-size:13px;margin-top:4px">AI Security Researcher</div>
+        <div class="muted" style="font-size:12px;margin-top:4px">Kumaraguru College of Technology</div>
+        <div class="muted" style="font-size:12px;margin-top:2px">Technical Lead, GDG • Core Member, Team Nova</div>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="https://github.com/DarkOrange77" target="_blank" title="GitHub">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/delora-edward-39317a32a" target="_blank" title="LinkedIn">LinkedIn</a>
+        </div>
+      </aside>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section fade-in">
       <h3>Featured Projects</h3>
       <div class="projects-grid">
+
+        <article class="project featured" style="border-color:rgba(126,241,255,0.18);background:linear-gradient(135deg,rgba(126,241,255,0.04),rgba(196,123,255,0.02))">
+          <div style="font-size:12px;color:var(--accent);font-weight:600">Jan – Mar 2026 • ML Safety Research</div>
+          <h4>LLM Adversarial Defense Framework</h4>
+          <p class="muted">Adaptive defense system for LLM jailbreak attacks using confidence-based gray-zone routing to selectively apply safety checks. Implemented a 6-type attack suite and 7-layer defense pipeline covering semantic classification, intent alignment, and temperature scaling.</p>
+          <ul class="exp-bullets" style="margin-top:12px">
+            <li>Designed confidence-aware routing reducing processing overhead by ~95% while maintaining detection accuracy</li>
+            <li>Achieved 74.55% overall accuracy on 1,725 WildGuard prompts, with +15.54pp improvement through narrative detection</li>
+            <li>Identified an 85% false negative rate in semantic classification through rigorous evaluation — documented limitations and future directions including ensemble detection and fine-tuned classifiers</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">DeBERTa</span><span class="tag">Sentence Transformers</span><span class="tag">Streamlit</span><span class="tag">Groq API</span><span class="tag">HuggingFace</span><span class="tag">ML Safety</span><span class="tag">Adversarial AI</span></div>
+        </article>
+
         <article class="project">
-          <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • Security</div>
+          <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • Security • 🏆 Gov. Funded</div>
           <h4>ClickSafe AI</h4>
-          <p class="muted">AI-powered phishing simulation and cyber awareness platform selected for government funding at MSME Hackathon 2025.</p>
+          <p class="muted">AI-powered phishing simulation and cyber awareness platform selected for government funding at MSME IDEA Hackathon 5.0.</p>
           <div class="tags"><span class="tag">AI</span><span class="tag">Phishing Detection</span><span class="tag">Government Funded</span></div>
         </article>
-        
+
+        <article class="project">
+          <div style="font-size:12px;color:var(--accent);font-weight:600">2026 • Multimodal AI</div>
+          <h4>GuardPaw</h4>
+          <p class="muted">Multimodal AI fraud detection platform built during Futurekind Fellowship. Detects animal rescue fraud by analyzing images, text, and fundraiser links using Qwen2-VL-7B, FAISS vector search, and RAG-based semantic matching against 16+ scam patterns.</p>
+          <div class="tags"><span class="tag">Qwen2-VL</span><span class="tag">FAISS</span><span class="tag">RAG</span><span class="tag">Flask</span><span class="tag">Multimodal</span></div>
+        </article>
+
         <article class="project">
           <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • Threat Detection</div>
           <h4>Homoglyph Detection Tool</h4>
@@ -212,17 +264,38 @@
         </article>
 
         <article class="project">
-          <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • AI Ethics</div>
-          <h4>The Rehearsal Room</h4>
-          <p class="muted">Psychological visual novel exploring AI control and manipulation ethics through branching narratives and stat-driven decision modeling.</p>
-          <div class="tags"><span class="tag">Game Dev</span><span class="tag">AI Ethics</span><span class="tag">Narrative Design</span></div>
-        </article>
-
-        <article class="project">
           <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • Deepfake Detection</div>
           <h4>TraceOut (CodHer25)</h4>
           <p class="muted">Deepfake detection prototype built during CodHer25 Hackathon. Flags facial manipulation using lightweight CNNs and links legal takedown tools.</p>
           <div class="tags"><span class="tag">CNN</span><span class="tag">Computer Vision</span><span class="tag">Web Scraping</span></div>
+        </article>
+
+        <article class="project">
+          <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • AI Ethics</div>
+          <h4>The Rehearsal Room</h4>
+          <p class="muted">Psychological visual novel exploring AI control and manipulation ethics through branching narratives, player-driven stats, and an LLM-powered character for dynamic fourth-wall-breaking interactions.</p>
+          <div class="tags"><span class="tag">Game Dev</span><span class="tag">LLM</span><span class="tag">AI Ethics</span><span class="tag">Narrative Design</span></div>
+        </article>
+
+        <article class="project">
+          <div style="font-size:12px;color:var(--accent);font-weight:600">2026 • Computer Vision</div>
+          <h4>Driver Fatigue Detection</h4>
+          <p class="muted">Real-time drowsiness monitoring system using OpenCV and Mediapipe to detect eye blinks, yawns, and head tilts. Context-aware alerts for speed, weather, and time. Streamlit dashboard for live monitoring.</p>
+          <div class="tags"><span class="tag">OpenCV</span><span class="tag">Mediapipe</span><span class="tag">Streamlit</span><span class="tag">Real-time</span></div>
+        </article>
+
+        <article class="project">
+          <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • Smart Cities</div>
+          <h4>Bin-Eye</h4>
+          <p class="muted">Smart waste management system with MySQL-backed architecture tracking citizen complaints, bin statuses, and collector routes. AI module classifies uploaded bin images for real-time issue monitoring.</p>
+          <div class="tags"><span class="tag">MySQL</span><span class="tag">AI Classification</span><span class="tag">Frontend</span></div>
+        </article>
+
+        <article class="project">
+          <div style="font-size:12px;color:var(--accent);font-weight:600">2025 • ML</div>
+          <h4>Employee Salary Prediction</h4>
+          <p class="muted">End-to-end ML pipeline predicting income bracket (&gt;$50K). Compared Logistic Regression, Random Forest, SVM, and MLP Classifier (~85% accuracy). Deployed as interactive Streamlit app.</p>
+          <div class="tags"><span class="tag">ML Pipeline</span><span class="tag">scikit-learn</span><span class="tag">Streamlit</span><span class="tag">~85% Acc.</span></div>
         </article>
 
         <article class="project">
@@ -231,21 +304,57 @@
           <p class="muted">Personal portfolio showcasing projects and resume, designed and deployed to GitHub Pages.</p>
           <div class="tags"><span class="tag">Web Dev</span><span class="tag">GitHub Pages</span><span class="tag">Responsive</span></div>
         </article>
+
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="section fade-in">
       <h3>Experience & Activities</h3>
       <div class="experience-grid">
+
+        <div class="exp-item highlight">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">AI Fellow | Electric Sheep — Futurekind AI Fellowship</div>
+              <div class="exp-org">Futurekind / Builder Track</div>
+            </div>
+            <div class="exp-date">June – July 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Selected for a competitive 12-week program focused on AI applications for animal protection and environmental impact.</li>
+            <li>Specialized in the Builder Track — developed code-based implementations and practical AI tools with technical mentorship.</li>
+            <li>Built <strong style="color:#fff">GuardPaw</strong>, a multimodal AI fraud detection platform contributing to animal welfare.</li>
+            <li>Analyzed emerging AI trends and ethical implications within the planetary and animal protection sectors.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item highlight">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">AI Security Researcher — Bug Bounty Program</div>
+              <div class="exp-org">Self-directed</div>
+            </div>
+            <div class="exp-date">2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Investigated an Indirect Prompt Injection (IPI) vulnerability in an AI agent workflow, demonstrating sensitive data exfiltration via context manipulation.</li>
+            <li>Provided technical clarification during triage, highlighting external context contamination and least-privilege failures.</li>
+            <li>Gained hands-on experience in AI vulnerability reporting, security communication, and agent threat modeling.</li>
+          </ul>
+        </div>
+
         <div class="exp-item">
           <div class="exp-header">
             <div>
               <div class="exp-title">AI Intern</div>
               <div class="exp-org">IBM SkillsBuild (Edunet Foundation)</div>
             </div>
-            <div class="exp-date">June - July 2025</div>
+            <div class="exp-date">June – July 2025</div>
           </div>
-          <p class="muted" style="font-size:14px">Trained regression models to predict employee salaries with focus on ethical data practices, preprocessing, and evaluation.</p>
+          <ul class="exp-bullets">
+            <li>Trained regression models to predict employee salaries with focus on ethical data practices, preprocessing, and evaluation.</li>
+          </ul>
         </div>
 
         <div class="exp-item">
@@ -254,9 +363,11 @@
               <div class="exp-title">Web Development Intern</div>
               <div class="exp-org">Re' Club, Kumaraguru College</div>
             </div>
-            <div class="exp-date">April - May 2025</div>
+            <div class="exp-date">April – May 2025</div>
           </div>
-          <p class="muted" style="font-size:14px">Built responsive UIs for personal portfolios and capstone game. Collaborated with cross-functional teams and deployed using GitHub.</p>
+          <ul class="exp-bullets">
+            <li>Built responsive UIs for personal portfolios and capstone game. Collaborated with cross-functional teams and deployed using GitHub.</li>
+          </ul>
         </div>
 
         <div class="exp-item">
@@ -267,18 +378,22 @@
             </div>
             <div class="exp-date">May 2025</div>
           </div>
-          <p class="muted" style="font-size:14px">Researched trends in mobility and ethical implications. Learned about electric vehicle integration of sensors and actuators.</p>
+          <ul class="exp-bullets">
+            <li>Researched trends in mobility and ethical implications. Studied the inner workings of electric vehicles, especially the integration of sensors and actuators.</li>
+          </ul>
         </div>
 
         <div class="exp-item">
           <div class="exp-header">
             <div>
-              <div class="exp-title">Team Nova – Cybersecurity Division</div>
-              <div class="exp-org">IQube, KCT</div>
+              <div class="exp-title">Team Nova — Cybersecurity Division</div>
+              <div class="exp-org">iQube — Innovation Center, KCT</div>
             </div>
-            <div class="exp-date">2025</div>
+            <div class="exp-date">Feb 2025 – Feb 2026</div>
           </div>
-          <p class="muted" style="font-size:14px">Participated in NOVA CTF (Ranked 26th solo). Solved reverse engineering, cryptography, and forensic challenges.</p>
+          <ul class="exp-bullets">
+            <li>Participated in NOVA CTF — <strong style="color:#fff">Ranked 26th solo</strong>. Solved reverse engineering, cryptography, and forensic challenges across multiple internal CTFs.</li>
+          </ul>
         </div>
 
         <div class="exp-item">
@@ -289,22 +404,49 @@
             </div>
             <div class="exp-date">2025</div>
           </div>
-          <p class="muted" style="font-size:14px">Developed TraceOut, a deepfake detection prototype for identifying and reporting manipulated facial content.</p>
+          <ul class="exp-bullets">
+            <li>Developed TraceOut, a deepfake detection prototype for identifying and reporting manipulated facial content.</li>
+          </ul>
         </div>
 
         <div class="exp-item">
           <div class="exp-header">
             <div>
-              <div class="exp-title">KCT Ideathon</div>
-              <div class="exp-org">Innovation Challenge</div>
+              <div class="exp-title">Re' Ideathon</div>
+              <div class="exp-org">Innovation Challenge, KCT</div>
             </div>
             <div class="exp-date">2025</div>
           </div>
-          <p class="muted" style="font-size:14px">Proposed sustainable, bio-inspired material solutions for environmental challenges.</p>
+          <ul class="exp-bullets">
+            <li>Proposed sustainable, bio-inspired material solutions for environmental challenges.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section fade-in">
+      <h3>Research</h3>
+      <div class="research-item">
+        <div class="research-meta">
+          <span>MIDAS Project • 2025</span>
+          <span class="pub-badge">📄 Publication In Progress</span>
+        </div>
+        <div class="research-title">AI Slop Analysis: Writing Transformation in the Generative AI Era</div>
+        <ul class="research-bullets">
+          <li>Authored a mixed-methods research paper analyzing "AI slop" — the homogenization and quality degradation of writing in the LLM era.</li>
+          <li>Qualitatively identified 5 transformative themes from a multi-source corpus.</li>
+          <li>Quantitatively validated themes by achieving <strong style="color:#fff">99.3% AI-vs-human text classification accuracy</strong> using linguistic features and ML.</li>
+          <li>Created a composite "Slop Index" demonstrating extreme separability (<strong style="color:#fff">t = −85.82</strong>) between human and AI writing styles.</li>
+        </ul>
+        <div class="tags" style="margin-top:16px">
+          <span class="tag">NLP</span><span class="tag">ML Classification</span><span class="tag">Corpus Analysis</span><span class="tag">LLM Evaluation</span><span class="tag">Mixed Methods</span>
         </div>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="section fade-in">
       <h3>Skills & Expertise</h3>
       <div style="margin-bottom:20px">
@@ -316,6 +458,9 @@
           <div class="tag">Adversarial Robustness</div>
           <div class="tag">Phishing Defense</div>
           <div class="tag">Deepfake Detection</div>
+          <div class="tag">AI Vulnerability Research</div>
+          <div class="tag">Prompt Injection</div>
+          <div class="tag">Agent Threat Modeling</div>
         </div>
       </div>
       <div style="margin-bottom:20px">
@@ -325,9 +470,33 @@
           <div class="tag">Machine Learning</div>
           <div class="tag">NLP</div>
           <div class="tag">Computer Vision</div>
+          <div class="tag">Multimodal AI</div>
+          <div class="tag">RAG / FAISS</div>
+          <div class="tag">OpenCV & Mediapipe</div>
           <div class="tag">Web Development</div>
           <div class="tag">REST APIs</div>
+          <div class="tag">Flask / Streamlit</div>
+          <div class="tag">MySQL</div>
           <div class="tag">GitHub</div>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <div style="font-weight:600;color:var(--accent);margin-bottom:12px;font-size:15px">Clubs & Leadership</div>
+        <div style="display:grid;gap:10px">
+          <div class="leadership-item">
+            <div class="leadership-dot"></div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:#fff">Campus Technical Lead</div>
+              <div style="font-size:13px;color:var(--muted)">Google Developer Groups (GDG) · Oct 2025 – Present</div>
+            </div>
+          </div>
+          <div class="leadership-item">
+            <div class="leadership-dot"></div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:#fff">Team Nova Member</div>
+              <div style="font-size:13px;color:var(--muted)">iQube — Innovation Center, KCT · Feb 2025 – Feb 2026</div>
+            </div>
+          </div>
         </div>
       </div>
       <div>
@@ -342,25 +511,26 @@
       </div>
     </section>
 
-   <section id="contact" class="section fade-in">
-  <h3>Get In Touch</h3>
-  <p class="muted" style="font-size:14px;margin-top:4px">
-    Interested in collaboration or want to discuss AI security? Fill out the form below and I'll get back to you!
-  </p>
-  <form action="https://formsubmit.co/bezz39587@gmail.com" method="POST" style="margin-top:24px;max-width:400px">
-    <input type="hidden" name="_captcha" value="false">
-    <div style="margin-bottom:14px">
-      <input type="text" name="name" placeholder="Your Name" required>
-    </div>
-    <div style="margin-bottom:14px">
-      <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div style="margin-bottom:14px">
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    </div>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" class="section fade-in">
+      <h3>Get In Touch</h3>
+      <p class="muted" style="font-size:14px;margin-top:4px">
+        Interested in collaboration or want to discuss AI security? Fill out the form below and I'll get back to you!
+      </p>
+      <form action="https://formsubmit.co/bezz39587@gmail.com" method="POST" style="margin-top:24px;max-width:400px">
+        <input type="hidden" name="_captcha" value="false">
+        <div style="margin-bottom:14px">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div style="margin-bottom:14px">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div style="margin-bottom:14px">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
 
     <footer class="fade-in">
       <div>© <span id="year"></span> Delora Edward — AI Security Researcher</div>
